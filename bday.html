@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>paras iya ha</title>
+<style>
+body{
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    font-family:Arial,sans-serif;
+}
+
+.container{
+    text-align:center;
+}
+
+button{
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:25px;
+    background:#ff4081;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+.letter{
+    width:300px;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    margin-top:20px;
+    opacity:0;
+    transform:translateY(30px);
+    transition:all 1s ease;
+    display:none;
+}
+
+.letter.show{
+    opacity:1;
+    transform:translateY(0);
+}
+video{
+    height: 300px;
+    width: 300px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <button id="letterBtn" onclick="toggleLetter()">
+         Open Birthday Letter
+    </button>
+
+    <div id="letter" class="letter">
+        <h2> belated Happy Birthday, Hernan!</h2>
+
+        <p>
+            Hello Hernan belated happy 18th birthday keep safe and have a truly wonderful birthday. and sorry for everything I did to you. I know I made mistakes sorry and belated happy birthday dol .
+        </p>
+        <br>
+        <p><b>Take care and good luck</b></p>
+      <video controls src="video_20260704_212430.mp4"
+    </div>
+</div>
+
+<script>
+function toggleLetter() {
+    const letter = document.getElementById("letter");
+    const btn = document.getElementById("letterBtn");
+
+    if (letter.classList.contains("show")) {
+        letter.classList.remove("show");
+
+        setTimeout(() => {
+            letter.style.display = "none";
+        }, 1000);
+
+        btn.innerHTML = " Open Birthday Letter";
+    } else {
+        letter.style.display = "block";
+
+        setTimeout(() => {
+            letter.classList.add("show");
+        }, 50);
+
+        btn.innerHTML = "Close Letter";
+    }
+}
+</script>
+
+</body>
+</html>
